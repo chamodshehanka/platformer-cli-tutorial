@@ -17,12 +17,11 @@ package cmd
 
 import (
   "fmt"
-  "os"
   "github.com/spf13/cobra"
+  "os"
 
   homedir "github.com/mitchellh/go-homedir"
   "github.com/spf13/viper"
-
 )
 
 
@@ -31,8 +30,8 @@ var cfgFile string
 
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
-  Use:   "platformer-cli-tutorial",
-  Short: "A brief description of your application",
+  Use:   "platformer",
+  Short: "Helping businesses succeed in the Cloud.",
   Long: `A longer description that spans multiple lines and likely contains
 examples and usage of using your application. For example:
 
@@ -60,7 +59,7 @@ func init() {
   // Cobra supports persistent flags, which, if defined here,
   // will be global for your application.
 
-  rootCmd.PersistentFlags().StringVar(&cfgFile, "config", "", "config file (default is $HOME/.platformer-cli-tutorial.yaml)")
+  rootCmd.PersistentFlags().StringVar(&cfgFile, "config", "", "config file (default is $HOME/.platformer.yaml)")
 
 
   // Cobra also supports local flags, which will only run
@@ -84,7 +83,7 @@ func initConfig() {
 
     // Search config in home directory with name ".platformer-cli-tutorial" (without extension).
     viper.AddConfigPath(home)
-    viper.SetConfigName(".platformer-cli-tutorial")
+    viper.SetConfigName(".platformer")
   }
 
   viper.AutomaticEnv() // read in environment variables that match
