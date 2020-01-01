@@ -18,6 +18,7 @@ package cmd
 import (
 	"fmt"
 
+	"github.com/kubernetes/kompose"
 	"github.com/spf13/cobra"
 )
 
@@ -27,7 +28,7 @@ var komposeCmd = &cobra.Command{
 	Short: "Docker Compose + Kubernets",
 	Long: `Converts Docker Compose files into Kubernets YAMLs`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("kompose called")
+		fmt.Println("Generating Kubernetes yaml ")
 	},
 }
 
@@ -43,4 +44,8 @@ func init() {
 	// Cobra supports local flags which will only run when this command
 	// is called directly, e.g.:
 	// komposeCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
+}
+
+func generate() {
+
 }
